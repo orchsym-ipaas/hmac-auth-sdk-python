@@ -73,13 +73,14 @@ return base64.b64encode(h.digest())
 
 ### 使用示例
 
-```
-    url = "https://172.18.28.240/env-101/por-1/test/api/users/2"
-    headers = generate_request_headers("user_tom", "password", "GET", url)
 
-    import requests
-    r = requests.get(url, verify=False, headers=headers)
-    print(r.text)
-```
+测试调用前，修改以下参数：
+- username: HMAC 认证用户名
+- secret: HMAC 认证秘钥
+- method: 请求方法
+- url: 请求完整路径，比如: http://www.example.com/a/b/c?type=1
 
+```
+$ python gateway_hmac.py
+```
 
